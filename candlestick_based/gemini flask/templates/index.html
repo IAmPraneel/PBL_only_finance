@@ -1,19 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Send Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>indicator page. </title>
+
 </head>
-<body>
-  <h1>Send a Message</h1>
-  <form method="POST">
-    <label for="name">Ticker:</label>
-    <input type="text" id="name" name="name"><br>
-    <label for="name1">start:</label>
-    <input type="text" id="name1" name="name1"><br>
-    <label for="name2">end:</label>
-    <input type="text" id="name2" name="name2"><br>
+<body style="background-image: url('https://media.istockphoto.com/id/1090589706/photo/businessman-looking-up-at-chart-as-arrow-breaks-through-a-chart.jpg?s=612x612&w=0&k=20&c=GtVsKDyo2GNKEWpDr7GCmd7WP7kF2miHdOJ0MVMAJqM=');">
+    <a href="home.html" style="display: block; align-items: center;" class="home">
+        <p style="font-size: 100px; text-align: center;">🤖</p></a>
+    <form method="POST">    
+    <input type="text" class="input" style="height: 25px; width: 450px;" id="Ticker" placeholder="Ticker name"> <br>
+    <input type="text" class="input" style="height: 25px; width: 450px;" id="date1" placeholder="Start date"><br>
+    <input type="text" class="input" style="height: 25px; width: 450px;" id="date2" placeholder="End date"><br>
     
-    <input type="submit" value="Submit">
-  </form>
+    <label for="cars" class="input" placeholder="choose" style="text-align: center;">Choose an indicator:</label><br>
+
+    <select name="indicator" id="cars"class="input" >
+      
+      <option value="three black_crows">three black_crows</option>
+      <option value="golden cross">golden cross</option>
+      <option value="death-cross">death-cross</option>
+      <option value="bullish_harami">bullish_harami</option>
+      <option value="three white soldiers">three white soldiers</option>
+      <option value="bearish harami">bearish harami</option>
+      <option value="death cross">death cross</option>
+      <option value="long black body">long black body </option>
+      <option value="long white body">long white body</option>
+      <option value="bullish kicking">bullish kicking</option>
+      <option value="bearish kicking">bearish kicking</option>
+      <option value="kd ratio">kd ratio</option>
+      <option value="coppock curve">coppock curve</option>
+      <br>
+      <option value="awesome oscillator">awesome oscillator</option>
+    </select>
+    <input type="submit" class="input" value="Submit">
+</form>   
+
+    
 </body>
 </html>
