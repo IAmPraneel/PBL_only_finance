@@ -1,0 +1,39 @@
+.home{
+    
+    background-image: url('https://media.istockphoto.com/id/1090589706/photo/businessman-looking-up-at-chart-as-arrow-breaks-through-a-chart.jpg?s=612x612&w=0&k=20&c=GtVsKDyo2GNKEWpDr7GCmd7WP7kF2miHdOJ0MVMAJqM=');
+}
+.head{
+    display: block;
+    width: 500px;
+    background-color: aliceblue;
+    margin-left: 350px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 10px;
+}
+
+.input{
+    display: block;
+    margin-left: 300px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.list{
+    background-color: aliceblue;
+    margin-left: 500px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 10px;
+}
+
+.info{
+    display: block;
+    background-color: aliceblue;
+    float: right;
+    margin-right: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 10px;
+}
