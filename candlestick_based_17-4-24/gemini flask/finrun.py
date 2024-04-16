@@ -31,7 +31,7 @@ import base64
     
         
 # indicator 14        
-def identify_three_black_crows(ticker_symbol, start_date, end_date):
+'''def identify_three_black_crows(ticker_symbol, start_date, end_date):
     # Download historical data
     stock_data = yf.download(ticker_symbol, start=start_date, end=end_date)
 
@@ -59,7 +59,50 @@ def identify_three_black_crows(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='red', linestyle='--', linewidth=2, label='Three Black Crows')
     print(f"Indicator last observed on {three_black_crows[-1]}")
     plt.legend()
-    plt.show()
+    #plt.show()
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return(img_data)'''
+
+def identify_three_black_crows(ticker_symbol, start_date, end_date):
+    # Download historical data
+    stock_data = yf.download(ticker_symbol, start=start_date, end=end_date)
+
+    # Calculate daily returns
+    stock_data['Daily_Return'] = stock_data['Close'].pct_change()
+
+    # Identify Three Black Crows pattern
+    three_black_crows = []
+    for i in range(2, len(stock_data)-2):
+        if stock_data['Close'][i] < stock_data['Open'][i] and \
+           stock_data['Close'][i-1] < stock_data['Open'][i-1] and \
+           stock_data['Close'][i-2] < stock_data['Open'][i-2] and \
+           stock_data['Close'][i-1] < stock_data['Close'][i-2] and \
+           stock_data['Close'][i] < stock_data['Close'][i-1]:
+            three_black_crows.append(stock_data.index[i])
+
+    # Plotting the stock prices
+    plt.figure(figsize=(10, 6))
+    plt.plot(stock_data['Close'], label='Close Price', color='blue')
+    plt.title(f'{ticker_symbol} Stock Price with Three Black Crows Pattern')
+
+    # Highlight Three Black Crows pattern
+    for date in three_black_crows:
+        plt.axvline(date, color='red', linestyle='--', linewidth=2, label='Three Black Crows')
+    print(f"Indicator last observed on {three_black_crows[-1]}")
+    plt.legend()
+
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_three_white_soldiers(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -88,7 +131,14 @@ def identify_three_white_soldiers(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='green', linestyle='--', linewidth=2, label='Three White Soldiers')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_bullish_harami(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -116,7 +166,14 @@ def identify_bullish_harami(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='green', linestyle='--', linewidth=2, label='Bullish Harami')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_bearish_harami(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -144,7 +201,14 @@ def identify_bearish_harami(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='red', linestyle='--', linewidth=2, label='Bearish Harami')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_death_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None):
     # Download historical data
@@ -173,7 +237,14 @@ def identify_death_cross(ticker_symbol, short_window=10, long_window=50, start_d
         plt.axvline(date, color='red', linestyle='--', linewidth=2, label='Death Cross')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_golden_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None):
     # Download historical data
@@ -202,8 +273,14 @@ def identify_golden_cross(ticker_symbol, short_window=10, long_window=50, start_
         plt.axvline(date, color='green', linestyle='--', linewidth=2, label='Golden Cross')
 
     plt.legend()
-    plt.show()
-
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 def identify_long_black_body(ticker_symbol, start_date, end_date):
     # Download historical data
     stock_data = yf.download(ticker_symbol, start=start_date, end=end_date)
@@ -225,7 +302,14 @@ def identify_long_black_body(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='black', linestyle='--', linewidth=2, label='Long Black Body')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_long_white_body(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -248,7 +332,14 @@ def identify_long_white_body(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='green', linestyle='--', linewidth=2, label='Long White Body')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_bullish_kicking(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -273,7 +364,14 @@ def identify_bullish_kicking(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='green', linestyle='--', linewidth=2, label='Bullish Kicking')
 
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def identify_bearish_kicking(ticker_symbol, start_date, end_date):
     # Download historical data
@@ -298,8 +396,14 @@ def identify_bearish_kicking(ticker_symbol, start_date, end_date):
         plt.axvline(date, color='red', linestyle='--', linewidth=2, label='Bearish Kicking')
 
     plt.legend()
-    plt.show()
-
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 def calculate_kd_ratio(ticker_symbol, start_date, end_date, window=14):
     # Download historical data
     stock_data = yf.download(ticker_symbol, start=start_date, end=end_date)
@@ -316,7 +420,14 @@ def calculate_kd_ratio(ticker_symbol, start_date, end_date, window=14):
     plt.plot(stock_data['%D'], label='%D', color='red')
     plt.title(f'{ticker_symbol} Stochastic Oscillator (%K and %D)')
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def calculate_mfi(data, period=14):
     typical_price = (data['High'] + data['Low'] + data['Close']) / 3
@@ -347,7 +458,14 @@ def plot_mfi(ticker_symbol, start_date, end_date):
     plt.xlabel('Date')
     plt.ylabel('MFI')
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def calculate_coppock_curve(data, roc1_period=14, roc2_period=11, wma_period=10):
     # Calculate Rate of Change (ROC)
@@ -372,7 +490,14 @@ def plot_coppock_curve(ticker_symbol, start_date, end_date):
     plt.plot(stock_data['Coppock_Curve'], label='Coppock Curve', color='blue')
     plt.title(f'{ticker_symbol} Coppock Curve')
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def calculate_awesome_oscillator(data):
     # Calculate simple moving averages
@@ -398,7 +523,14 @@ def plot_awesome_oscillator(ticker_symbol, start_date, end_date):
     plt.xlabel('Date')
     plt.ylabel('Awesome Oscillator')
     plt.legend()
-    plt.show()
+    # Save the plot to a bytes object
+    
+    img = BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    img_data = img.getvalue()
+    img.close()
+    return img_data
 
 def do(Ticker='AAPL',date1='2023-01-01',date2='2023-12-31',n=1):
     ticker_symbol =  Ticker
@@ -406,36 +538,40 @@ def do(Ticker='AAPL',date1='2023-01-01',date2='2023-12-31',n=1):
     end_date = date2
 
     if n==1:
-        identify_three_black_crows(ticker_symbol, start_date, end_date)
+        img=identify_three_black_crows(ticker_symbol, start_date, end_date)
     if n==2:
-        identify_three_white_soldiers(ticker_symbol, start_date, end_date)
+        img=identify_three_white_soldiers(ticker_symbol, start_date, end_date)
     if n==3:    
-        identify_bullish_harami(ticker_symbol, start_date, end_date)
+        img=identify_bullish_harami(ticker_symbol, start_date, end_date)
     if n==4:
-        identify_bearish_harami(ticker_symbol, start_date, end_date)
+        img=identify_bearish_harami(ticker_symbol, start_date, end_date)
     if n==5:
-        identify_death_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None)
+        img=identify_death_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None)
     if n==6:
-        identify_golden_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None)
+        img=identify_golden_cross(ticker_symbol, short_window=10, long_window=50, start_date=None, end_date=None)
     if n==7:
-        identify_long_black_body(ticker_symbol, start_date, end_date)
+        img=identify_long_black_body(ticker_symbol, start_date, end_date)
     if n==8:
-        identify_long_white_body(ticker_symbol, start_date, end_date)
+        img=identify_long_white_body(ticker_symbol, start_date, end_date)
     if n==9:
-        identify_bullish_kicking(ticker_symbol, start_date, end_date)
+        img=identify_bullish_kicking(ticker_symbol, start_date, end_date)
     if n==10:
-        identify_bearish_kicking(ticker_symbol, start_date, end_date)
+        img=identify_bearish_kicking(ticker_symbol, start_date, end_date)
     if n==11:
-        calculate_kd_ratio(ticker_symbol, start_date, end_date, window=14)
+        img=calculate_kd_ratio(ticker_symbol, start_date, end_date, window=14)
     if n==12:
-        plot_mfi(ticker_symbol, start_date, end_date)
+        img=plot_mfi(ticker_symbol, start_date, end_date)
     if n==13:
-        plot_coppock_curve(ticker_symbol, start_date, end_date)
+        img=plot_coppock_curve(ticker_symbol, start_date, end_date)
     if n==14:
-        plot_awesome_oscillator(ticker_symbol, start_date, end_date)
+        img=plot_awesome_oscillator(ticker_symbol, start_date, end_date)
+    return(img)
 
 def fincall(ticker_symbol,start_date,end_date,n):
-    do(ticker_symbol,start_date,end_date,n)
+    n=int(n)
+    img = None
+    img=do(ticker_symbol,start_date,end_date,n)
+    return(img)
 
 
 

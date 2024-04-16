@@ -8,9 +8,10 @@
   <h1>Response</h1>
   <p>{{ processed_message }}</p>
   
-  <img src="{{img}}" alt="Matplotlib Graph">
-  <a href="index.html" class="info">
-    <p>again</p>
-  </a>
+  
+  <img src="data:image/png;base64,{{ img }}" alt="Stock Price Analysis">
+  
+  <a href="{{ url_for('to_home') }}">Go back to home page</a>
+  
 </body>
 </html>

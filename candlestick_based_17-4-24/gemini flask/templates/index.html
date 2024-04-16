@@ -1,19 +1,18 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
-    <title>indicator page. </title>
-
+    <title>Indicator Page</title>
 </head>
 <body style="background-image: url('https://media.istockphoto.com/id/1090589706/photo/businessman-looking-up-at-chart-as-arrow-breaks-through-a-chart.jpg?s=612x612&w=0&k=20&c=GtVsKDyo2GNKEWpDr7GCmd7WP7kF2miHdOJ0MVMAJqM=');">
-    <a href="home.html" style="display: block; align-items: center;" class="home">
-    <p style="font-size: 100px; text-align: center;">🗠🗠</p></a>
-    
+    <a href="{{ url_for('to_home') }}">Go to Home Page</a>
+    <p style="font-size: 100px; text-align: center;">🗠🗠</p>
     <a class="head">
-        <h1>Welcome to the indicator assistant</h1>
+        <h1>Welcome to the Indicator Assistant</h1>
         <p>Choose a stock and the indicator you would like to plot along with the start and end date</p>
     </a><br>
     
@@ -24,30 +23,28 @@
         <input type="text" class="input" style="height: 25px; width: 450px;" name="indnum" placeholder="Indicator number"><br>
         <input type="submit" class="input" value="Submit">
     </form>
-</form> 
-
-<a href="home.html" class="info">
-    <p>About indicators</p>
-</a>    
-<br>
-<a style="display: block; width: 200px;" class="list" >
-    <ol>
-    <li>three_black_crows</li>
-    <li>three_white_soldiers</li>
-    <li>bullish_harami</li>
-    <li>bearish_harami</li>
-    <li>death_cross</li>
-    <li>golden_cross</li>
-    <li>long_black_body</li>
-    <li>long_white_body</li>
-    <li>bullish_kicking</li>
-    <li>bearish_kicking</li>
-    <li>kd_ratio</li>
-    <li>mfi</li>
-    <li>coppock_curve</li>
-    <li>awesome_oscillator</li>
-    </ol></a>
-
     
+    <a href="home.html" class="info">
+        <p>About Indicators</p>
+    </a>    
+    <br>
+    <a style="display: block; width: 200px;" class="list">
+        <ol>
+            <li>three_black_crows</li>
+            <li>three_white_soldiers</li>
+            <li>bullish_harami</li>
+            <li>bearish_harami</li>
+            <li>death_cross</li>
+            <li>golden_cross</li>
+            <li>long_black_body</li>
+            <li>long_white_body</li>
+            <li>bullish_kicking</li>
+            <li>bearish_kicking</li>
+            <li>kd_ratio</li>
+            <li>mfi</li>
+            <li>coppock_curve</li>
+            <li>awesome_oscillator</li>
+        </ol>
+    </a>
 </body>
 </html>
