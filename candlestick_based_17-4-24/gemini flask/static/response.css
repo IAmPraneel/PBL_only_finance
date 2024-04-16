@@ -1,0 +1,12 @@
+.send{
+    display: block;
+    background-color: aliceblue;
+    float: center;
+    text-align: center;
+    font-size: 40px;
+    margin : auto;
+    border-radius: 20px;
+    padding: 50px;
+    border: 50px;
+    width: 500px;
+}

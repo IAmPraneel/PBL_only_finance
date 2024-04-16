@@ -1,0 +1,22 @@
+.header{
+    text-align: center;
+    color: aliceblue;
+}
+
+.send{
+    display: block;
+    background-color: aliceblue;
+    float: center;
+    text-align: center;
+    font-size: 40px;
+    margin : auto;
+    border-radius: 20px;
+    padding: 50px;
+    border: 50px;
+    width: 500px;
+}
+.body{
+    background: url('https://img.freepik.com/free-vector/gradient-cryptocurrency-concept_23-2149215736.jpg?size=626&ext=jpg&ga=GA1.1.1686445852.1711729879&semt=ais');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

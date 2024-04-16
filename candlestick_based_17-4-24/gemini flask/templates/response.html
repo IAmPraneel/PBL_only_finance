@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='response.css') }}">
   <title>Response</title>
 </head>
 <body>
-  <h1>Response</h1>
-  <p>{{ processed_message }}</p>
+  <h1 style="text-align: center;">Response</h1>
+  <p style="text-align: center;">{{ processed_message }}</p>
   
   
-  <img src="data:image/png;base64,{{ img }}" alt="Stock Price Analysis">
+  <img src="data:image/png;base64,{{ img }}" alt="Stock Price Analysis" style="text-align: center;">
   
-  <a href="{{ url_for('to_home') }}">Go back to home page</a>
+  <a href="{{ url_for('to_home') }}" class="send">Go back to home page</a>
   
 </body>
 </html>

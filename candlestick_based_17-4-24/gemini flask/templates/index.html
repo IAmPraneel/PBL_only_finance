@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
     <title>Indicator Page</title>
 </head>
-<body style="background-image: url('https://media.istockphoto.com/id/1090589706/photo/businessman-looking-up-at-chart-as-arrow-breaks-through-a-chart.jpg?s=612x612&w=0&k=20&c=GtVsKDyo2GNKEWpDr7GCmd7WP7kF2miHdOJ0MVMAJqM=');">
-    <a href="{{ url_for('to_home') }}">Go to Home Page</a>
-    <p style="font-size: 100px; text-align: center;">🗠🗠</p>
+<body class="body">
+    <a href="{{ url_for('to_home') }}" class="send">Go to Home Page</a>
+    
     <a class="head">
         <h1>Welcome to the Indicator Assistant</h1>
         <p>Choose a stock and the indicator you would like to plot along with the start and end date</p>

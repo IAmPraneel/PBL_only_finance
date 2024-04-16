@@ -42,7 +42,7 @@ def index():
         plt.savefig(img, format='png')
         img.seek(0)
         img_encoded = base64.b64encode(img.getvalue()).decode()'''
-        processed_message = f"Hello, {Ticker}! Start date: {date1}, End date: {date2}, Ticker number: {indnum}"
+        processed_message = f"Ticker selected : {Ticker}! Start date: {date1}, End date: {date2}, Indicator number: {indnum}"
         
         # Debug statements
         

@@ -532,7 +532,7 @@ def plot_awesome_oscillator(ticker_symbol, start_date, end_date):
     img.close()
     return img_data
 
-def do(Ticker='AAPL',date1='2023-01-01',date2='2023-12-31',n=1):
+def do(Ticker,date1,date2,n):
     ticker_symbol =  Ticker
     start_date = date1
     end_date = date2
